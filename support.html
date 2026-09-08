@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Get help with Ascend workouts, Apple Watch, Apple Health, account management, and more.">
+  <meta name="theme-color" content="#12151c">
+  <meta property="og:title" content="Ascend Support">
+  <meta property="og:description" content="Get help with Ascend workouts, Apple Watch, Apple Health, account management, and more.">
+  <meta property="og:type" content="website">
+  <title>Ascend Support</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --amber: #f5a623;
+      --amber-light: #ffd37c;
+      --canvas: #12151c;
+      --surface: #1a1e27;
+      --surface-raised: #222733;
+      --text: #f5f6f8;
+      --muted: #a8afbd;
+      --line: rgba(255, 255, 255, 0.1);
+      --max-width: 71rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(circle at 87% -10%, rgba(245, 166, 35, 0.2), transparent 23rem),
+        radial-gradient(circle at -8% 24rem, rgba(56, 83, 126, 0.18), transparent 27rem),
+        var(--canvas);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0;
+      min-width: 20rem;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--amber-light);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      background: var(--amber);
+      color: #171208;
+      font-weight: 800;
+      left: 1rem;
+      padding: 0.65rem 0.85rem;
+      position: fixed;
+      top: -5rem;
+      z-index: 10;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .shell { margin: 0 auto; max-width: var(--max-width); padding: 0 1.5rem; }
+
+    .site-header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      min-height: 5.5rem;
+    }
+
+    .brand {
+      align-items: center;
+      display: inline-flex;
+      font-size: 1.08rem;
+      font-weight: 850;
+      gap: 0.6rem;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      align-items: center;
+      background: linear-gradient(145deg, #ffe49b, var(--amber) 55%, #bc7414);
+      border-radius: 0.65rem;
+      box-shadow: 0 0.45rem 1.4rem rgba(245, 166, 35, 0.26);
+      color: #201605;
+      display: inline-flex;
+      font-size: 0.78rem;
+      font-weight: 950;
+      height: 1.7rem;
+      justify-content: center;
+      width: 1.7rem;
+    }
+
+    .header-link {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .header-link:hover { color: var(--text); }
+
+    .hero { padding: 4.7rem 0 5.2rem; }
+
+    .eyebrow {
+      align-items: center;
+      color: var(--amber-light);
+      display: flex;
+      font-size: 0.72rem;
+      font-weight: 850;
+      gap: 0.55rem;
+      letter-spacing: 0.13em;
+      margin: 0 0 1rem;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      background: var(--amber);
+      border-radius: 50%;
+      content: "";
+      height: 0.45rem;
+      width: 0.45rem;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-size: clamp(2.75rem, 8vw, 5.35rem);
+      letter-spacing: -0.068em;
+      line-height: 0.98;
+      margin-bottom: 1.35rem;
+      max-width: 12ch;
+    }
+
+    .lede {
+      color: #c1c7d1;
+      font-size: clamp(1.08rem, 2.5vw, 1.3rem);
+      line-height: 1.55;
+      margin-bottom: 2rem;
+      max-width: 37rem;
+    }
+
+    .button {
+      align-items: center;
+      background: var(--amber);
+      border-radius: 0.85rem;
+      box-shadow: 0 0.9rem 2.1rem rgba(245, 166, 35, 0.2);
+      color: #231704;
+      display: inline-flex;
+      font-size: 0.95rem;
+      font-weight: 850;
+      min-height: 3.2rem;
+      padding: 0.75rem 1.15rem;
+      text-decoration: none;
+    }
+
+    .button:hover { background: #ffc043; transform: translateY(-1px); }
+
+    main { padding-bottom: 5.5rem; }
+
+    .section { border-top: 1px solid var(--line); padding: 4.5rem 0; }
+
+    .section-grid { display: grid; gap: 2rem; grid-template-columns: minmax(11rem, 0.68fr) minmax(0, 1.65fr); }
+
+    .section-kicker {
+      color: var(--amber-light);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      margin: 0 0 0.55rem;
+      text-transform: uppercase;
+    }
+
+    h2 { font-size: clamp(1.55rem, 3vw, 2.15rem); letter-spacing: -0.045em; line-height: 1.1; margin-bottom: 0; }
+    h3 { font-size: 1rem; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 0.4rem; }
+    .section-copy > p { color: var(--muted); max-width: 43rem; }
+    .section-copy > p:last-child { margin-bottom: 0; }
+
+    .feature-grid { display: grid; gap: 0.9rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1.5rem; }
+
+    .feature, .callout, details {
+      background: rgba(34, 39, 51, 0.8);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+    }
+
+    .feature { min-height: 8.7rem; padding: 1.15rem; }
+    .feature-number { color: var(--amber); display: block; font-size: 0.75rem; font-weight: 900; letter-spacing: 0.08em; margin-bottom: 1.2rem; }
+    .feature p { color: var(--muted); font-size: 0.91rem; line-height: 1.5; margin-bottom: 0; }
+
+    .callout { margin-top: 1.5rem; padding: 1.25rem 1.35rem; }
+    .callout strong { color: var(--amber-light); }
+    .callout p { color: var(--muted); margin: 0.35rem 0 0; }
+
+    .support-list { color: var(--muted); margin: 1.3rem 0 0; padding-left: 1.25rem; }
+    .support-list li { margin: 0.45rem 0; padding-left: 0.25rem; }
+
+    .troubleshooting { margin-top: 1.55rem; }
+    .troubleshooting > h3 { margin-bottom: 0.8rem; }
+    details { margin: 0.65rem 0; overflow: hidden; }
+    summary { cursor: pointer; font-size: 0.95rem; font-weight: 780; list-style: none; padding: 1rem 1.15rem; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { color: var(--amber); content: "+"; float: right; font-size: 1.25rem; line-height: 1; }
+    details[open] summary { border-bottom: 1px solid var(--line); }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--muted); margin: 0; padding: 1rem 1.15rem; }
+
+    .inline-link { color: var(--amber-light); font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    .inline-link:hover { color: #fff1c8; }
+
+    .contact-panel {
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.17), rgba(35, 40, 52, 0.92) 48%);
+      border: 1px solid rgba(245, 166, 35, 0.36);
+      border-radius: 1.3rem;
+      padding: clamp(1.5rem, 4vw, 2.4rem);
+    }
+
+    .contact-panel h2 { font-size: clamp(1.8rem, 4vw, 2.55rem); margin-bottom: 0.7rem; }
+    .contact-panel p { color: #d2d6de; margin-bottom: 1.35rem; max-width: 37rem; }
+
+    footer { border-top: 1px solid var(--line); padding: 2rem 0 2.4rem; }
+    .footer-content { align-items: flex-start; display: flex; gap: 1rem 2rem; justify-content: space-between; }
+    .footer-brand { color: var(--text); font-size: 0.9rem; font-weight: 850; text-decoration: none; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 0.65rem 1.1rem; justify-content: flex-end; }
+    .footer-links a, .copyright { color: var(--muted); font-size: 0.82rem; text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+    .copyright { margin: 1rem 0 0; }
+
+    @media (max-width: 42rem) {
+      .shell { padding: 0 1.1rem; }
+      .site-header { min-height: 4.75rem; }
+      .hero { padding: 3.6rem 0 4rem; }
+      .section { padding: 3.3rem 0; }
+      .section-grid { gap: 1.4rem; grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature { min-height: 0; }
+      .feature-number { margin-bottom: 0.7rem; }
+      .footer-content { flex-direction: column; }
+      .footer-links { justify-content: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to support content</a>
+
+  <header class="shell site-header" id="top">
+    <a class="brand" href="#top" aria-label="Ascend Support home">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span>Ascend</span>
+    </a>
+    <a class="header-link" href="#contact">Contact Support</a>
+  </header>
+
+  <main class="shell" id="main-content">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Support center</p>
+      <h1 id="page-title">Ascend Support</h1>
+      <p class="lede">Everything you need to plan your workouts, track your progress, and train with Ascend.</p>
+      <a class="button" href="mailto:ksil.apps@gmail.com?subject=Ascend%20Support" aria-label="Contact Ascend Support by email">Contact Support</a>
+    </section>
+
+    <section class="section" aria-labelledby="getting-started-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">01 / Training</p>
+          <h2 id="getting-started-title">Getting started</h2>
+        </div>
+        <div class="section-copy">
+          <p>Build a routine around how you train, schedule it across your week, then use it when it is time to work. Ascend keeps your planned work and completed training together.</p>
+          <div class="feature-grid" role="list" aria-label="Getting started steps">
+            <article class="feature" role="listitem"><span class="feature-number">01</span><h3>Create your routine</h3><p>Add workout days and exercises, then choose sets and rep targets that fit your plan.</p></article>
+            <article class="feature" role="listitem"><span class="feature-number">02</span><h3>Schedule workouts</h3><p>Assign training, rest, or step-goal days to build a weekly rhythm.</p></article>
+            <article class="feature" role="listitem"><span class="feature-number">03</span><h3>Start and log</h3><p>Open today’s workout, log sets, reps, and weight as you move through each exercise.</p></article>
+            <article class="feature" role="listitem"><span class="feature-number">04</span><h3>Finish and review</h3><p>Complete your workout, then review workout history and strength progress over time.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="watch-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">02 / Apple Watch</p>
+          <h2 id="watch-title">Train from your wrist</h2>
+        </div>
+        <div class="section-copy">
+          <p>Ascend has an Apple Watch companion app designed for use during workouts. Start and complete workout sets from Apple Watch without reaching for your iPhone, and log reps and progress from your wrist while training.</p>
+          <p>Create and edit workout routines in the iPhone app. Detailed workout history, settings, and progress analysis are also available in the iPhone app.</p>
+          <div class="troubleshooting" aria-labelledby="watch-help-title">
+            <h3 id="watch-help-title">Apple Watch troubleshooting</h3>
+            <details>
+              <summary>Ascend is not showing on Apple Watch</summary>
+              <p>Confirm Ascend is installed and up to date on your iPhone. Open Apple’s Watch app, find Ascend in Available Apps, and install or enable it. Keep both devices updated to supported versions of iOS and watchOS.</p>
+            </details>
+            <details>
+              <summary>Workout is not syncing to Apple Watch</summary>
+              <p>Open Ascend on your iPhone, then open it on Apple Watch. Keep the devices paired, nearby, and connected through Bluetooth or Wi-Fi. The watch mirrors an active workout from the iPhone app.</p>
+            </details>
+            <details>
+              <summary>iPhone and Watch connection seems unavailable</summary>
+              <p>Check that your Apple Watch is paired and connected to the iPhone in Apple’s Watch app. Turn Bluetooth back on if needed, then reopen Ascend on both devices.</p>
+            </details>
+            <details>
+              <summary>Health information is missing</summary>
+              <p>On iPhone, check the Health app and confirm Ascend has permission to read the activity data you want to display. Health access is managed in Apple’s Health settings and can be changed at any time.</p>
+            </details>
+            <details>
+              <summary>Still need help?</summary>
+              <p>Close and reopen Ascend on both devices. If the issue continues, restart your iPhone and Apple Watch, then <a class="inline-link" href="mailto:ksil.apps@gmail.com?subject=Ascend%20Apple%20Watch%20Support">contact support</a> with your iPhone and watchOS versions.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="health-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">03 / Apple Health</p>
+          <h2 id="health-title">Your activity, with permission</h2>
+        </div>
+        <div class="section-copy">
+          <p>Ascend can integrate with Apple Health (HealthKit) to show daily fitness activity in the app. When you allow access, Ascend reads steps, heart rate, and active calories.</p>
+          <p>You control Health permissions in Apple’s Health settings. You can change or remove Ascend’s access there at any time. Ascend does not write data to Apple Health.</p>
+          <div class="callout"><strong>Tip</strong><p>If Health data does not appear, open the Health app on iPhone and review Ascend’s read permissions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tracking-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">04 / Workout tracking</p>
+          <h2 id="tracking-title">Record work that adds up</h2>
+        </div>
+        <div class="section-copy">
+          <p>During a workout, log each set with its reps and weight. Use the rest timer between efforts, then complete the session when you are done. Your completed workouts remain available in workout history, and strength progress charts help you see changes across your training.</p>
+          <ul class="support-list">
+            <li>Log sets, reps, and weight for each exercise.</li>
+            <li>Use a rest timer to pace your recovery between sets.</li>
+            <li>Complete workouts to preserve them in your history.</li>
+            <li>Review strength progress charts built from your logged training.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="notifications-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">05 / Notifications</p>
+          <h2 id="notifications-title">Stay on schedule</h2>
+        </div>
+        <div class="section-copy">
+          <p>Enable training-day reminders in Ascend’s notification settings and choose a reminder time. Ascend can also notify you about rest timers, streak risk, weekly summaries, and award unlocks when those options are enabled.</p>
+          <p>Notification delivery is controlled by iPhone Settings. If notifications are off, allow Ascend in <strong>Settings &gt; Notifications &gt; Ascend</strong>, then return to Ascend to manage each notification type.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="apple-signin-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">06 / Account</p>
+          <h2 id="apple-signin-title">Sign in with Apple</h2>
+        </div>
+        <div class="section-copy">
+          <p>On iPhone, you can create or sign in to an Ascend account with Sign in with Apple. Apple may offer Hide My Email, which shares a private relay address instead of your personal email address.</p>
+          <p>If you use Hide My Email, keep access to that Apple ID and relay address so account messages can still reach you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="data-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">07 / Account &amp; data</p>
+          <h2 id="data-title">You stay in control</h2>
+        </div>
+        <div class="section-copy">
+          <p>To sign out, open <strong>More</strong>, select your profile, then choose <strong>Sign out</strong>. The account’s cached data on that device is cleared or separated so another person using the device cannot read it.</p>
+          <p>To permanently delete an account, open <strong>More</strong>, select your profile, choose <strong>Delete account and data</strong>, and confirm. The account and synced data are removed from the live database immediately and cannot be restored. Encrypted infrastructure backups may retain residual copies for up to 30 days before being overwritten.</p>
+          <p>Guest workouts, recorded before signing in, stay on that device and are removed by uninstalling the app. For deletion without the app, use the <a class="inline-link" href="delete-account.html">account deletion page</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="privacy-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">08 / Privacy</p>
+          <h2 id="privacy-title">Private by design</h2>
+        </div>
+        <div class="section-copy">
+          <p>You can use Ascend without an account; in that case, workout data stays on your device. If you create an account and enable sync, Ascend stores the data needed to provide that service. Ascend does not share your data with advertisers and does not show advertising in the app.</p>
+          <p><a class="inline-link" href="privacy-policy.html" aria-label="Read Ascend Privacy Policy">Read the Ascend Privacy Policy</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-panel" id="contact" aria-labelledby="contact-title">
+      <p class="section-kicker">09 / Contact support</p>
+      <h2 id="contact-title">Need help? Contact the Ascend support team.</h2>
+      <p>Tell us what happened and, if useful, include your device model and iOS version. We will help you get back to training.</p>
+      <a class="button" href="mailto:ksil.apps@gmail.com?subject=Ascend%20Support" aria-label="Email Ascend support at ksil.apps@gmail.com">ksil.apps@gmail.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-content">
+        <a class="footer-brand" href="#top">Ascend</a>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#top">Support</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-use.html">Terms of Use</a>
+          <a href="#contact">Contact Support</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
