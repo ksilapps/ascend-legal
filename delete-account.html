@@ -3,44 +3,93 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How to permanently delete your Ascend account and associated data.">
+<meta name="theme-color" content="#12151c">
+<link rel="icon" type="image/png" href="ascend-favicon.png">
 <title>Delete your Ascend account</title>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    background: #ffffff;
-    color: #1a1d24;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 46rem;
-    padding: 2.5rem 1.25rem 4rem;
-  }
-  h1 { font-size: 1.85rem; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
-  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
-  .lede { color: #767c8a; margin-top: 0; }
-  .card { background: #f7f8fa; border: 1px solid #e2e5ea; border-radius: 12px; padding: 1rem 1.25rem; }
-  code { background: #f0f1f5; border-radius: 4px; font-size: 0.9em; padding: 0.15em 0.4em; }
-  ol, ul { padding-left: 1.35rem; }
-  li { margin: 0.4rem 0; }
-  footer { color: #767c8a; font-size: 0.85rem; margin-top: 3rem; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #0e1015; color: #edeef2; }
-    code { background: #1b1e27; }
-    .card { background: #14161d; border-color: #2a2e3a; }
-  }
+  :root { color-scheme: dark; --amber:#f5a623; --amber-light:#ffd37c; --canvas:#12151c; --surface:#1a1e27; --raised:#222733; --text:#f5f6f8; --muted:#a8afbd; --line:rgba(255,255,255,.1); --max:71rem; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:radial-gradient(circle at 87% -10%,rgba(245,166,35,.2),transparent 23rem),radial-gradient(circle at -8% 24rem,rgba(56,83,126,.18),transparent 27rem),var(--canvas); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; font-size:16px; line-height:1.65; margin:0; min-width:20rem; }
+  a { color:var(--amber-light); text-underline-offset:.18em; }
+  a:hover { color:#fff1c8; }
+  a:focus-visible { outline:3px solid var(--amber-light); outline-offset:4px; }
+  .skip-link { background:var(--amber); color:#171208; font-weight:800; left:1rem; padding:.65rem .85rem; position:fixed; top:-5rem; z-index:10; }
+  .skip-link:focus { top:1rem; }
+  .shell { margin:0 auto; max-width:var(--max); padding:0 1.5rem; }
+  .site-header { align-items:center; display:flex; justify-content:space-between; min-height:5.5rem; }
+  .brand { align-items:center; color:var(--text); display:inline-flex; font-size:1.08rem; font-weight:850; gap:.6rem; letter-spacing:-.03em; text-decoration:none; }
+  .brand-mark { border-radius:.65rem; box-shadow:0 .45rem 1.4rem rgba(245,166,35,.26); display:block; height:1.7rem; object-fit:cover; width:1.7rem; }
+  .header-links { display:flex; gap:1.2rem; }
+  .header-links a { color:var(--muted); font-size:.9rem; font-weight:750; text-decoration:none; }
+  .header-links a:hover { color:var(--text); }
+  .hero { padding:4.7rem 0 4.2rem; }
+  .eyebrow { align-items:center; color:var(--amber-light); display:flex; font-size:.72rem; font-weight:850; gap:.55rem; letter-spacing:.13em; margin:0 0 1rem; text-transform:uppercase; }
+  .eyebrow::before { background:var(--amber); border-radius:50%; content:""; height:.45rem; width:.45rem; }
+  h1,h2,p { margin-top:0; }
+  h1 { font-size:clamp(2.75rem,8vw,5.1rem); letter-spacing:-.065em; line-height:.98; margin-bottom:1.35rem; max-width:13ch; }
+  .lede { color:#c1c7d1; font-size:clamp(1.05rem,2.5vw,1.24rem); line-height:1.55; margin:0; max-width:42rem; }
+  code { background:var(--raised); border:1px solid var(--line); border-radius:.35rem; color:var(--text); font-size:.85em; padding:.15em .4em; }
+  main { padding-bottom:5.5rem; }
+  .document { border-top:1px solid var(--line); display:grid; gap:3rem; grid-template-columns:minmax(12rem,.62fr) minmax(0,1.65fr); padding:4.5rem 0; }
+  .document-nav { align-self:start; position:sticky; top:2rem; }
+  .document-nav p { color:var(--amber-light); font-size:.72rem; font-weight:850; letter-spacing:.12em; margin-bottom:.7rem; text-transform:uppercase; }
+  .document-nav ul { list-style:none; margin:0; padding:0; }
+  .document-nav li { margin:.38rem 0; }
+  .document-nav a { color:var(--muted); font-size:.84rem; text-decoration:none; }
+  .document-nav a:hover { color:var(--text); }
+  .document-body { min-width:0; }
+  .document-body > p { color:var(--muted); }
+  .document-body > h2 { border-top:1px solid var(--line); font-size:clamp(1.45rem,3vw,2rem); letter-spacing:-.04em; line-height:1.15; margin:3.4rem 0 1rem; padding-top:3.4rem; }
+  .document-body > h2:first-of-type { border-top:0; margin-top:2.8rem; padding-top:0; }
+  .document-body > ul,.document-body > ol { color:var(--muted); padding-left:1.35rem; }
+  li { margin:.5rem 0; padding-left:.2rem; }
+  strong { color:var(--text); }
+  .card,.warn { background:rgba(34,39,51,.82); border:1px solid var(--line); border-radius:1rem; margin:1.35rem 0; padding:1.2rem 1.35rem; }
+  .card p,.warn p { color:#c7ccd5; }
+  .warn { background:linear-gradient(135deg,rgba(245,166,35,.14),rgba(34,39,51,.86)); border-color:rgba(245,166,35,.35); }
+  .table-wrap { border:1px solid var(--line); border-radius:1rem; margin:1.35rem 0; overflow-x:auto; }
+  table { border-collapse:collapse; min-width:34rem; width:100%; }
+  th,td { border-bottom:1px solid var(--line); padding:.9rem 1rem; text-align:left; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  th { background:rgba(34,39,51,.9); color:var(--amber-light); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
+  td { color:var(--muted); }
+  footer { border-top:1px solid var(--line); padding:2rem 0 2.4rem; }
+  .footer-content { align-items:flex-start; display:flex; gap:1rem 2rem; justify-content:space-between; }
+  .footer-brand { color:var(--text); font-size:.9rem; font-weight:850; text-decoration:none; }
+  .footer-links { display:flex; flex-wrap:wrap; gap:.65rem 1.1rem; justify-content:flex-end; }
+  .footer-links a,.copyright { color:var(--muted); font-size:.82rem; text-decoration:none; }
+  .footer-links a:hover { color:var(--text); }
+  .copyright { margin:1rem 0 0; }
+  @media (max-width:48rem) { .document { gap:1.6rem; grid-template-columns:1fr; padding:3.3rem 0; } .document-nav { position:static; } .document-nav ul { display:flex; flex-wrap:wrap; gap:.25rem 1rem; } .document-nav li { margin:0; } }
+  @media (max-width:42rem) { .shell { padding:0 1.1rem; } .site-header { min-height:4.75rem; } .header-links a:first-child { display:none; } .hero { padding:3.6rem 0 3.5rem; } .footer-content { flex-direction:column; } .footer-links { justify-content:flex-start; } }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
 
-<h1>Delete your Ascend account</h1>
-<p class="lede">Ascend (<code>com.ksil.ascend</code>)</p>
+<a class="skip-link" href="#main-content">Skip to account deletion instructions</a>
+<header class="shell site-header" id="top">
+  <a class="brand" href="index.html" aria-label="Ascend legal home"><img class="brand-mark" src="ascend-icon.png" alt="" width="28" height="28"><span>Ascend</span></a>
+  <nav class="header-links" aria-label="Primary navigation"><a href="index.html">Legal</a><a href="support.html">Support</a></nav>
+</header>
+<main class="shell" id="main-content">
+<section class="hero" aria-labelledby="page-title">
+  <p class="eyebrow">Account &amp; data</p>
+  <h1 id="page-title">Delete your Ascend account</h1>
+  <p class="lede">Ascend (<code>com.ksil.ascend</code>)</p>
+</section>
+<article class="document">
+<nav class="document-nav" aria-label="On this page"><p>On this page</p><ul><li><a href="#in-app">Delete in app</a></li><li><a href="#request">Email request</a></li><li><a href="#deleted">What is deleted</a></li><li><a href="#device">Device data</a></li><li><a href="#retention">Retention</a></li></ul></nav>
+<div class="document-body">
 
 <p>
   You can permanently delete your Ascend account and its data at any time. Deletion is
   immediate and cannot be undone.
 </p>
 
-<h2>Delete from inside the app</h2>
+<h2 id="in-app">Delete from inside the app</h2>
 <ol>
   <li>Open Ascend and go to <strong>More &rarr; the profile button</strong>.</li>
   <li>Make sure you are signed in to the account you want to remove.</li>
@@ -48,7 +97,7 @@
   <li>Confirm when asked. The account and its stored data are deleted right away.</li>
 </ol>
 
-<h2>Request deletion without the app</h2>
+<h2 id="request">Request deletion without the app</h2>
 <div class="card">
   <p>
     If you can no longer sign in or have uninstalled the app, email
@@ -61,14 +110,14 @@
   </p>
 </div>
 
-<h2>What is deleted</h2>
+<h2 id="deleted">What is deleted</h2>
 <ul>
   <li>Your account and sign-in credentials.</li>
   <li>Your profile, including any display name and email address stored with it.</li>
   <li>Your synced workout plans, workout sessions, completed sets, exercise history, and app settings.</li>
 </ul>
 
-<h2>What happens on your device</h2>
+<h2 id="device">What happens on your device</h2>
 <p>
   Deleting from inside the app also removes the copy of that account's data stored on that device.
   If you used Ascend on more than one device, open the app on each one and sign out, or
@@ -79,16 +128,20 @@
   are not part of your account and are removed by uninstalling the app.
 </p>
 
-<h2>Retention</h2>
+<h2 id="retention">Retention</h2>
 <p>
   Deleted account records are removed from the live database immediately. Encrypted infrastructure
   backups may retain residual copies for up to 30 days, after which they are overwritten. We do not
   restore deleted accounts from those backups.
 </p>
 
-<footer>
-  Last updated 1 September 2026 &middot; Questions: ksil.apps@gmail.com
-</footer>
+</div>
+</article>
+</main>
+<footer><div class="shell">
+  <div class="footer-content"><a class="footer-brand" href="index.html">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Subscription Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
+  <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved. &middot; Last updated 1 September 2026</p>
+</div></footer>
 
 </body>
 </html>

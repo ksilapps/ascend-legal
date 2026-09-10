@@ -3,39 +3,86 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ascend terms of use</title>
+<meta name="description" content="Terms governing use of the Ascend workout tracking app.">
+<meta name="theme-color" content="#12151c">
+<link rel="icon" type="image/png" href="ascend-favicon.png">
+<title>Ascend Terms of Use</title>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    background: #ffffff;
-    color: #1a1d24;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 46rem;
-    padding: 2.5rem 1.25rem 4rem;
-  }
-  h1 { font-size: 1.85rem; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
-  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
-  .lede { color: #767c8a; margin-top: 0; }
-  .card { background: #f7f8fa; border: 1px solid #e2e5ea; border-radius: 12px; padding: 1rem 1.25rem; }
-  .warn { background: #fdf3ec; border: 1px solid #f0ddc8; border-radius: 12px; padding: 1rem 1.25rem; }
-  code { background: #f0f1f5; border-radius: 4px; font-size: 0.9em; padding: 0.15em 0.4em; }
-  ol, ul { padding-left: 1.35rem; }
-  li { margin: 0.4rem 0; }
-  footer { color: #767c8a; font-size: 0.85rem; margin-top: 3rem; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #0e1015; color: #edeef2; }
-    code { background: #1b1e27; }
-    .card { background: #14161d; border-color: #2a2e3a; }
-    .warn { background: #241a14; border-color: #4a2e1e; }
-  }
+  :root { color-scheme: dark; --amber:#f5a623; --amber-light:#ffd37c; --canvas:#12151c; --surface:#1a1e27; --raised:#222733; --text:#f5f6f8; --muted:#a8afbd; --line:rgba(255,255,255,.1); --max:71rem; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:radial-gradient(circle at 87% -10%,rgba(245,166,35,.2),transparent 23rem),radial-gradient(circle at -8% 24rem,rgba(56,83,126,.18),transparent 27rem),var(--canvas); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; font-size:16px; line-height:1.65; margin:0; min-width:20rem; }
+  a { color:var(--amber-light); text-underline-offset:.18em; }
+  a:hover { color:#fff1c8; }
+  a:focus-visible { outline:3px solid var(--amber-light); outline-offset:4px; }
+  .skip-link { background:var(--amber); color:#171208; font-weight:800; left:1rem; padding:.65rem .85rem; position:fixed; top:-5rem; z-index:10; }
+  .skip-link:focus { top:1rem; }
+  .shell { margin:0 auto; max-width:var(--max); padding:0 1.5rem; }
+  .site-header { align-items:center; display:flex; justify-content:space-between; min-height:5.5rem; }
+  .brand { align-items:center; color:var(--text); display:inline-flex; font-size:1.08rem; font-weight:850; gap:.6rem; letter-spacing:-.03em; text-decoration:none; }
+  .brand-mark { border-radius:.65rem; box-shadow:0 .45rem 1.4rem rgba(245,166,35,.26); display:block; height:1.7rem; object-fit:cover; width:1.7rem; }
+  .header-links { display:flex; gap:1.2rem; }
+  .header-links a { color:var(--muted); font-size:.9rem; font-weight:750; text-decoration:none; }
+  .header-links a:hover { color:var(--text); }
+  .hero { padding:4.7rem 0 4.2rem; }
+  .eyebrow { align-items:center; color:var(--amber-light); display:flex; font-size:.72rem; font-weight:850; gap:.55rem; letter-spacing:.13em; margin:0 0 1rem; text-transform:uppercase; }
+  .eyebrow::before { background:var(--amber); border-radius:50%; content:""; height:.45rem; width:.45rem; }
+  h1,h2,p { margin-top:0; }
+  h1 { font-size:clamp(2.75rem,8vw,5.1rem); letter-spacing:-.065em; line-height:.98; margin-bottom:1.35rem; max-width:13ch; }
+  .lede { color:#c1c7d1; font-size:clamp(1.05rem,2.5vw,1.24rem); line-height:1.55; margin:0; max-width:42rem; }
+  code { background:var(--raised); border:1px solid var(--line); border-radius:.35rem; color:var(--text); font-size:.85em; padding:.15em .4em; }
+  main { padding-bottom:5.5rem; }
+  .document { border-top:1px solid var(--line); display:grid; gap:3rem; grid-template-columns:minmax(12rem,.62fr) minmax(0,1.65fr); padding:4.5rem 0; }
+  .document-nav { align-self:start; position:sticky; top:2rem; }
+  .document-nav p { color:var(--amber-light); font-size:.72rem; font-weight:850; letter-spacing:.12em; margin-bottom:.7rem; text-transform:uppercase; }
+  .document-nav ul { list-style:none; margin:0; padding:0; }
+  .document-nav li { margin:.38rem 0; }
+  .document-nav a { color:var(--muted); font-size:.84rem; text-decoration:none; }
+  .document-nav a:hover { color:var(--text); }
+  .document-body { min-width:0; }
+  .document-body > p { color:var(--muted); }
+  .document-body > h2 { border-top:1px solid var(--line); font-size:clamp(1.45rem,3vw,2rem); letter-spacing:-.04em; line-height:1.15; margin:3.4rem 0 1rem; padding-top:3.4rem; }
+  .document-body > h2:first-of-type { border-top:0; margin-top:2.8rem; padding-top:0; }
+  .document-body > ul,.document-body > ol { color:var(--muted); padding-left:1.35rem; }
+  li { margin:.5rem 0; padding-left:.2rem; }
+  strong { color:var(--text); }
+  .card,.warn { background:rgba(34,39,51,.82); border:1px solid var(--line); border-radius:1rem; margin:1.35rem 0; padding:1.2rem 1.35rem; }
+  .card p,.warn p { color:#c7ccd5; }
+  .warn { background:linear-gradient(135deg,rgba(245,166,35,.14),rgba(34,39,51,.86)); border-color:rgba(245,166,35,.35); }
+  .table-wrap { border:1px solid var(--line); border-radius:1rem; margin:1.35rem 0; overflow-x:auto; }
+  table { border-collapse:collapse; min-width:34rem; width:100%; }
+  th,td { border-bottom:1px solid var(--line); padding:.9rem 1rem; text-align:left; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  th { background:rgba(34,39,51,.9); color:var(--amber-light); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
+  td { color:var(--muted); }
+  footer { border-top:1px solid var(--line); padding:2rem 0 2.4rem; }
+  .footer-content { align-items:flex-start; display:flex; gap:1rem 2rem; justify-content:space-between; }
+  .footer-brand { color:var(--text); font-size:.9rem; font-weight:850; text-decoration:none; }
+  .footer-links { display:flex; flex-wrap:wrap; gap:.65rem 1.1rem; justify-content:flex-end; }
+  .footer-links a,.copyright { color:var(--muted); font-size:.82rem; text-decoration:none; }
+  .footer-links a:hover { color:var(--text); }
+  .copyright { margin:1rem 0 0; }
+  @media (max-width:48rem) { .document { gap:1.6rem; grid-template-columns:1fr; padding:3.3rem 0; } .document-nav { position:static; } .document-nav ul { display:flex; flex-wrap:wrap; gap:.25rem 1rem; } .document-nav li { margin:0; } }
+  @media (max-width:42rem) { .shell { padding:0 1.1rem; } .site-header { min-height:4.75rem; } .header-links a:first-child { display:none; } .hero { padding:3.6rem 0 3.5rem; } .footer-content { flex-direction:column; } .footer-links { justify-content:flex-start; } }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
 
-<h1>Ascend terms of use</h1>
-<p class="lede">Ascend (<code>com.ksil.ascend</code>) &middot; Last updated 1 September 2026</p>
+<a class="skip-link" href="#main-content">Skip to terms of use</a>
+<header class="shell site-header" id="top">
+  <a class="brand" href="index.html" aria-label="Ascend legal home"><img class="brand-mark" src="ascend-icon.png" alt="" width="28" height="28"><span>Ascend</span></a>
+  <nav class="header-links" aria-label="Primary navigation"><a href="index.html">Legal</a><a href="support.html">Support</a></nav>
+</header>
+<main class="shell" id="main-content">
+<section class="hero" aria-labelledby="page-title">
+  <p class="eyebrow">Legal agreement</p>
+  <h1 id="page-title">Terms of Use</h1>
+  <p class="lede">Ascend (<code>com.ksil.ascend</code>) &middot; Last updated 1 September 2026</p>
+</section>
+<article class="document">
+<nav class="document-nav" aria-label="On this page"><p>On this page</p><ul><li><a href="#what-ascend-is">What Ascend is</a></li><li><a href="#exercise-safety">Exercise safety</a></li><li><a href="#risk">Assumption of risk</a></li><li><a href="#liability">Liability</a></li><li><a href="#account">Account &amp; conduct</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<div class="document-body">
 
 <p>
   These terms cover using the Ascend app itself &mdash; the workout tracking, timers, exercise
@@ -44,7 +91,7 @@
   see the <a href="subscription-terms.html">subscription terms</a>.
 </p>
 
-<h2>What Ascend is</h2>
+<h2 id="what-ascend-is">What Ascend is</h2>
 <p>
   Ascend is a workout logging and tracking tool. It helps you plan, schedule, and record your
   own workouts. It is not a personal trainer, a physical therapist, a medical device, or a
@@ -59,7 +106,7 @@
   </p>
 </div>
 
-<h2>Exercise demonstrations are reference only</h2>
+<h2 id="exercise-safety">Exercise demonstrations are reference only</h2>
 <p>
   Exercise videos, images, and written cues in the app are provided as a general reference for what
   a movement looks like &mdash; they are not a certified instructional program, not personalised to
@@ -77,7 +124,7 @@
   discomfort, or shortness of breath during a workout.
 </p>
 
-<h2>Assumption of risk</h2>
+<h2 id="risk">Assumption of risk</h2>
 <p>
   Physical exercise carries an inherent risk of injury, including but not limited to muscle strain,
   joint injury, falls, and, in rare cases, more serious harm, regardless of how it is performed. By
@@ -87,7 +134,7 @@
   safely, training within your own limits, and stopping when something feels wrong.
 </p>
 
-<h2>Limitation of liability</h2>
+<h2 id="liability">Limitation of liability</h2>
 <p>
   To the fullest extent permitted by law, Ascend, its developer, and anyone associated with it
   are not liable for any injury, death, property damage, or other loss arising from or related to
@@ -106,7 +153,7 @@
   medical or nutritional decision.
 </p>
 
-<h2>Your account and conduct</h2>
+<h2 id="account">Your account and conduct</h2>
 <ul>
   <li>You are responsible for the accuracy of the information you enter and for keeping your account credentials secure.</li>
   <li>Do not use Ascend for any unlawful purpose or in a way that could damage, disable, or impair the service for others.</li>
@@ -126,14 +173,18 @@
   law applies, without regard to conflict-of-law rules.
 </p>
 
-<h2>Contact</h2>
+<h2 id="contact">Contact</h2>
 <p>
   Questions: <strong>ksil.apps@gmail.com</strong>
 </p>
 
-<footer>
-  Ascend &middot; Last updated 1 September 2026
-</footer>
+</div>
+</article>
+</main>
+<footer><div class="shell">
+  <div class="footer-content"><a class="footer-brand" href="index.html">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Subscription Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
+  <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved.</p>
+</div></footer>
 
 </body>
 </html>

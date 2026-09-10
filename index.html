@@ -3,46 +3,110 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ascend legal</title>
+<meta name="description" content="Ascend privacy, terms, subscriptions, account deletion, and support resources.">
+<meta name="theme-color" content="#12151c">
+<link rel="icon" type="image/png" href="ascend-favicon.png">
+<title>Ascend</title>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    background: #ffffff;
-    color: #1a1d24;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 46rem;
-    padding: 2.5rem 1.25rem 4rem;
-  }
-  h1 { font-size: 1.85rem; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
-  .lede { color: #767c8a; margin-top: 0; }
-  ul { padding-left: 1.35rem; }
-  li { margin: 0.5rem 0; }
-  code { background: #f0f1f5; border-radius: 4px; font-size: 0.9em; padding: 0.15em 0.4em; }
-  footer { color: #767c8a; font-size: 0.85rem; margin-top: 3rem; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #0e1015; color: #edeef2; }
-    code { background: #1b1e27; }
-  }
+  :root { color-scheme: dark; --amber:#f5a623; --amber-light:#ffd37c; --canvas:#12151c; --surface:#1a1e27; --raised:#222733; --text:#f5f6f8; --muted:#a8afbd; --line:rgba(255,255,255,.1); --max:71rem; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:radial-gradient(circle at 87% -10%,rgba(245,166,35,.2),transparent 23rem),radial-gradient(circle at -8% 24rem,rgba(56,83,126,.18),transparent 27rem),var(--canvas); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; font-size:16px; line-height:1.65; margin:0; min-width:20rem; }
+  a { color:var(--amber-light); text-underline-offset:.18em; }
+  a:hover { color:#fff1c8; }
+  a:focus-visible { outline:3px solid var(--amber-light); outline-offset:4px; }
+  .skip-link { background:var(--amber); color:#171208; font-weight:800; left:1rem; padding:.65rem .85rem; position:fixed; top:-5rem; z-index:10; }
+  .skip-link:focus { top:1rem; }
+  .shell { margin:0 auto; max-width:var(--max); padding:0 1.5rem; }
+  .site-header { align-items:center; display:flex; justify-content:space-between; min-height:5.5rem; }
+  .brand { align-items:center; color:var(--text); display:inline-flex; font-size:1.08rem; font-weight:850; gap:.6rem; letter-spacing:-.03em; text-decoration:none; }
+  .brand-mark { border-radius:.65rem; box-shadow:0 .45rem 1.4rem rgba(245,166,35,.26); display:block; height:1.7rem; object-fit:cover; width:1.7rem; }
+  .header-links { display:flex; gap:1.2rem; }
+  .header-links a { color:var(--muted); font-size:.9rem; font-weight:750; text-decoration:none; }
+  .header-links a:hover { color:var(--text); }
+  .hero { padding:4.7rem 0 4.2rem; }
+  .eyebrow { align-items:center; color:var(--amber-light); display:flex; font-size:.72rem; font-weight:850; gap:.55rem; letter-spacing:.13em; margin:0 0 1rem; text-transform:uppercase; }
+  .eyebrow::before { background:var(--amber); border-radius:50%; content:""; height:.45rem; width:.45rem; }
+  h1,h2,p { margin-top:0; }
+  h1 { font-size:clamp(2.75rem,8vw,5.1rem); letter-spacing:-.065em; line-height:.98; margin-bottom:1.35rem; max-width:13ch; }
+  .lede { color:#c1c7d1; font-size:clamp(1.05rem,2.5vw,1.24rem); line-height:1.55; margin:0; max-width:42rem; }
+  code { background:var(--raised); border:1px solid var(--line); border-radius:.35rem; color:var(--text); font-size:.85em; padding:.15em .4em; }
+  main { padding-bottom:5.5rem; }
+  .document { border-top:1px solid var(--line); display:grid; gap:3rem; grid-template-columns:minmax(12rem,.62fr) minmax(0,1.65fr); padding:4.5rem 0; }
+  .document-nav { align-self:start; position:sticky; top:2rem; }
+  .document-nav p { color:var(--amber-light); font-size:.72rem; font-weight:850; letter-spacing:.12em; margin-bottom:.7rem; text-transform:uppercase; }
+  .document-nav ul { list-style:none; margin:0; padding:0; }
+  .document-nav li { margin:.38rem 0; }
+  .document-nav a { color:var(--muted); font-size:.84rem; text-decoration:none; }
+  .document-nav a:hover { color:var(--text); }
+  .document-body { min-width:0; }
+  .document-body > p { color:var(--muted); }
+  .document-body > h2 { border-top:1px solid var(--line); font-size:clamp(1.45rem,3vw,2rem); letter-spacing:-.04em; line-height:1.15; margin:3.4rem 0 1rem; padding-top:3.4rem; }
+  .document-body > h2:first-of-type { border-top:0; margin-top:2.8rem; padding-top:0; }
+  .document-body > ul,.document-body > ol { color:var(--muted); padding-left:1.35rem; }
+  li { margin:.5rem 0; padding-left:.2rem; }
+  strong { color:var(--text); }
+  .card,.warn { background:rgba(34,39,51,.82); border:1px solid var(--line); border-radius:1rem; margin:1.35rem 0; padding:1.2rem 1.35rem; }
+  .card p,.warn p { color:#c7ccd5; }
+  .warn { background:linear-gradient(135deg,rgba(245,166,35,.14),rgba(34,39,51,.86)); border-color:rgba(245,166,35,.35); }
+  .table-wrap { border:1px solid var(--line); border-radius:1rem; margin:1.35rem 0; overflow-x:auto; }
+  table { border-collapse:collapse; min-width:34rem; width:100%; }
+  th,td { border-bottom:1px solid var(--line); padding:.9rem 1rem; text-align:left; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  th { background:rgba(34,39,51,.9); color:var(--amber-light); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
+  td { color:var(--muted); }
+  footer { border-top:1px solid var(--line); padding:2rem 0 2.4rem; }
+  .footer-content { align-items:flex-start; display:flex; gap:1rem 2rem; justify-content:space-between; }
+  .footer-brand { color:var(--text); font-size:.9rem; font-weight:850; text-decoration:none; }
+  .footer-links { display:flex; flex-wrap:wrap; gap:.65rem 1.1rem; justify-content:flex-end; }
+  .footer-links a,.copyright { color:var(--muted); font-size:.82rem; text-decoration:none; }
+  .footer-links a:hover { color:var(--text); }
+  .copyright { margin:1rem 0 0; }
+  @media (max-width:48rem) { .document { gap:1.6rem; grid-template-columns:1fr; padding:3.3rem 0; } .document-nav { position:static; } .document-nav ul { display:flex; flex-wrap:wrap; gap:.25rem 1rem; } .document-nav li { margin:0; } }
+  @media (max-width:42rem) { .shell { padding:0 1.1rem; } .site-header { min-height:4.75rem; } .header-links a:first-child { display:none; } .hero { padding:3.6rem 0 3.5rem; } .footer-content { flex-direction:column; } .footer-links { justify-content:flex-start; } }
+  .legal-section { border-top:1px solid var(--line); padding:4.5rem 0; }
+  .legal-section > p { color:var(--muted); max-width:42rem; }
+  .legal-grid { display:grid; gap:1rem; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:2rem; }
+  .legal-card { background:rgba(34,39,51,.82); border:1px solid var(--line); border-radius:1rem; color:var(--text); min-height:12rem; padding:1.4rem; position:relative; text-decoration:none; transition:border-color .18s ease,transform .18s ease; }
+  .legal-card:hover { border-color:rgba(245,166,35,.48); color:var(--text); transform:translateY(-2px); }
+  .legal-card span { color:var(--amber); display:block; font-size:.72rem; font-weight:900; letter-spacing:.1em; margin-bottom:2rem; }
+  .legal-card h2 { font-size:1.25rem; letter-spacing:-.03em; margin-bottom:.45rem; }
+  .legal-card p { color:var(--muted); font-size:.92rem; margin:0; }
+  .legal-card strong { bottom:1.3rem; color:var(--amber-light); font-size:1.15rem; position:absolute; right:1.4rem; }
+  @media (max-width:42rem) { .legal-section { padding:3.3rem 0; } .legal-grid { grid-template-columns:1fr; } .legal-card { min-height:10.5rem; } }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .legal-card:hover { transform:none; } }
 </style>
 </head>
 <body>
 
-<h1>Ascend</h1>
-<p class="lede">Ascend (<code>com.ksil.ascend</code>)</p>
-
-<ul>
-  <li><a href="privacy-policy.html">Privacy policy</a></li>
-  <li><a href="terms-of-use.html">Terms of use</a></li>
-  <li><a href="subscription-terms.html">Subscription terms</a></li>
-  <li><a href="delete-account.html">Delete your account</a></li>
-  <li><a href="support.html">Support</a></li>
-</ul>
-
-<footer>
-  Questions: ksil.apps@gmail.com
-</footer>
+<a class="skip-link" href="#main-content">Skip to resources</a>
+<header class="shell site-header" id="top">
+  <a class="brand" href="#top" aria-label="Ascend home"><img class="brand-mark" src="ascend-icon.png" alt="" width="28" height="28"><span>Ascend</span></a>
+  <nav class="header-links" aria-label="Primary navigation"><a href="#resources">Resources</a><a href="support.html">Support</a></nav>
+</header>
+<main class="shell" id="main-content">
+  <section class="hero" aria-labelledby="page-title">
+    <p class="eyebrow">Policies &amp; terms</p>
+    <h1 id="page-title">Ascend</h1>
+    <p class="lede">Clear information about your privacy, your account, and the terms that apply when you train with Ascend.</p>
+  </section>
+  <section class="legal-section" id="resources" aria-labelledby="resources-title">
+    <p class="eyebrow">Choose a resource</p>
+    <h2 id="resources-title">Everything in one place</h2>
+    <p>Read how Ascend handles data, understand app and subscription terms, or get help managing your account.</p>
+    <div class="legal-grid">
+      <a class="legal-card" href="privacy-policy.html"><span>01 / Privacy</span><h2>Privacy Policy</h2><p>What stays on your device, what syncs, and the choices you control.</p><strong aria-hidden="true">&rarr;</strong></a>
+      <a class="legal-card" href="terms-of-use.html"><span>02 / Terms</span><h2>Terms of Use</h2><p>Rules, safety information, and responsibilities for using Ascend.</p><strong aria-hidden="true">&rarr;</strong></a>
+      <a class="legal-card" href="subscription-terms.html"><span>03 / Premium</span><h2>Subscription Terms</h2><p>Premium features, billing, renewal, cancellation, and refunds.</p><strong aria-hidden="true">&rarr;</strong></a>
+      <a class="legal-card" href="delete-account.html"><span>04 / Account</span><h2>Delete your account</h2><p>How to permanently remove your account and synced data.</p><strong aria-hidden="true">&rarr;</strong></a>
+      <a class="legal-card" href="support.html"><span>05 / Help</span><h2>Support</h2><p>Get help with Ascend, troubleshoot issues, or contact the support team.</p><strong aria-hidden="true">&rarr;</strong></a>
+    </div>
+  </section>
+</main>
+<footer><div class="shell">
+  <div class="footer-content"><a class="footer-brand" href="#top">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Subscription Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
+  <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved.</p>
+</div></footer>
 
 </body>
 </html>
