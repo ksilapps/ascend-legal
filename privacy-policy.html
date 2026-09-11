@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Learn how Ascend handles workout, account, health, and diagnostic data.">
+<meta name="description" content="Learn how Ascend handles workout, Apple Health, and crash-diagnostic data.">
 <meta name="theme-color" content="#12151c">
 <link rel="icon" type="image/png" href="ascend-favicon.png">
 <title>Ascend Privacy Policy</title>
@@ -80,76 +80,63 @@
 <section class="hero" aria-labelledby="page-title">
   <p class="eyebrow">Privacy &amp; data</p>
   <h1 id="page-title">Privacy Policy</h1>
-  <p class="lede">Ascend (<code>com.ksil.ascend</code>) &middot; Last updated 1 September 2026</p>
+  <p class="lede">Ascend (<code>com.ksil.ascend</code>) &middot; Last updated 11 September 2026</p>
 </section>
 
 <article class="document">
 <nav class="document-nav" aria-label="On this page">
   <p>On this page</p>
-  <ul><li><a href="#account-data">Account data</a></li><li><a href="#health-data">Health data</a></li><li><a href="#diagnostics">Diagnostics</a></li><li><a href="#choices">Your choices</a></li><li><a href="#security">Security</a></li><li><a href="#children">Children</a></li></ul>
+  <ul><li><a href="#local-data">Local data</a></li><li><a href="#health-data">Health data</a></li><li><a href="#diagnostics">Diagnostics</a></li><li><a href="#choices">Your choices</a></li><li><a href="#security">Security</a></li><li><a href="#children">Children</a></li></ul>
 </nav>
 <div class="document-body">
 
 <p>
-  Ascend is a workout tracker that works offline. You can use the whole app without an account.
-  This policy explains what is stored on your device, what is sent to our servers if you choose to
-  sign in, and what is never collected. For the rules on using the app itself, including exercise
-  and injury disclaimers, see the <a href="terms-of-use.html">terms of use</a>.
+  Ascend is a local-first workout tracker. The current release has no account or cloud-sync feature.
+  This policy explains what stays on your device, the Apple Health data Ascend can read with your
+  permission, and the limited crash diagnostics that can leave your device. For rules on using the
+  app itself, including exercise and injury disclaimers, see the
+  <a href="terms-of-use.html">terms of use</a>.
 </p>
 
-<h2>Using Ascend without an account</h2>
+<h2 id="local-data">Data stored on your device</h2>
 <div class="card">
   <p style="margin:0">
-    If you never sign in, your data never leaves your device. Workouts, plans, settings, and history
-    are stored locally and are not transmitted to us or to anyone else.
+    Your workout plans, workout sessions, completed sets, weights, reps, exercise history, goals,
+    settings, and profile preferences are stored locally. Ascend does not upload this content to us
+    or to an account service. Limited crash diagnostics are the only exception, as described below.
   </p>
 </div>
 
-<h2 id="account-data">What we store if you create an account</h2>
 <p>
-  Signing in is optional. It exists so your workouts can be backed up and restored on another
-  device. If you sign in, the following is stored on our servers:
+  If you use the companion Apple Watch app, current workout state can pass directly between your
+  paired iPhone and Apple Watch through Apple's device-connectivity service. We do not receive it.
+  Deleting Ascend removes its locally stored app data, subject to operating-system backup behavior.
 </p>
-
-<div class="table-wrap"><table>
-  <tr>
-    <th>Data</th>
-    <th>Why</th>
-  </tr>
-  <tr>
-    <td>Email address, and display name if you provide one</td>
-    <td>To identify your account and let you sign in and recover access</td>
-  </tr>
-  <tr>
-    <td>Workout plans, categories, and scheduled rest days</td>
-    <td>So your routine is restored when you reinstall or use another device</td>
-  </tr>
-  <tr>
-    <td>Workout sessions, completed sets, weights, reps, and session duration</td>
-    <td>So your training history and progress are restored</td>
-  </tr>
-  <tr>
-    <td>Exercise history and per-exercise defaults</td>
-    <td>To show your previous performance for each exercise</td>
-  </tr>
-  <tr>
-    <td>App settings, including your step and calorie goals</td>
-    <td>So your preferences carry across devices</td>
-  </tr>
-</table></div>
 
 <h2 id="health-data">Health and fitness data</h2>
 <p>
-  On iOS, Ascend can display step count, heart rate, and active calories from Apple Health.
-  This is off by default and only turned on if you enable it and grant permission in the system
-  prompt.
+  On iOS, Ascend requests read access to exactly six Apple Health data types:
+</p>
+<ul>
+  <li>Step count</li>
+  <li>Heart rate</li>
+  <li>Active energy burned (active calories)</li>
+  <li>Walking and running distance</li>
+  <li>Cycling distance</li>
+  <li>Swimming distance</li>
+</ul>
+<p>
+  Access is off by default. Ascend asks only after you enable health metrics and Apple displays its
+  permission prompt. Steps, heart rate, and active calories appear in activity summaries. Distance
+  readings are used only to suggest a total after a matching walking, running, cycling, or swimming
+  session; you can accept, replace, or ignore that suggestion.
 </p>
 <div class="card">
   <p style="margin:0">
-    <strong>Apple Health readings are never uploaded.</strong> They are read on demand, shown on
-    screen, and are not written to our servers or saved into your synced account data. Your step and
-    calorie <em>goals</em> are settings you choose, and those do sync, but the measurements
-    themselves never leave your device.
+    <strong>Apple Health readings remain on your devices.</strong> Ascend reads them on demand and
+    does not upload them to us, Sentry, or any analytics provider. If you accept a suggested step or
+    distance total, that value becomes part of your locally stored workout record. Ascend requests
+    no write access and writes nothing to Apple Health.
   </p>
 </div>
 <p>
@@ -157,42 +144,32 @@
   health metrics off inside Ascend.
 </p>
 
-<h2>Signing in with Google or Apple</h2>
+<h2 id="diagnostics">Crash diagnostics</h2>
 <p>
-  If you sign in with Google or Apple, we receive only your basic account identifier and email
-  address so an account can be created for you. We do not receive your password. Apple provides your
-  name only on the very first sign-in; if it is provided, it is stored as your display name. If you
-  use Apple's Hide My Email, we only ever see the relay address Apple generates.
-</p>
-
-<h2 id="diagnostics">Diagnostics and anonymous usage data</h2>
-<p>
-  So that crashes and data-loss bugs can be found without waiting for someone to report them,
-  Ascend sends two kinds of anonymous diagnostic information. Both are covered by a single
-  switch in the app under <strong>More &rarr; Privacy &rarr; Share anonymous usage data</strong>.
-  Turning it off stops both immediately.
+  Ascend uses <strong>Sentry</strong> to find JavaScript runtime crashes and serious data-loss
+  failures. Native fatal-crash capture is disabled because those reports cannot pass through
+  Ascend's JavaScript privacy filter. Sharing is off by default and controlled by
+  <strong>More &rarr; Privacy &rarr; Share anonymous usage data</strong>. Turning that switch off stops
+  new reports.
 </p>
 <ul>
   <li>
-    <strong>Crash reports</strong>, through <strong>Sentry</strong>. A report contains the error, the
-    place in our code it came from, and the app and device version. It does not include your name,
-    email, account identifier, or any health reading.
-  </li>
-  <li>
-    <strong>Anonymous app activity</strong>, through <strong>PostHog</strong>. This is a fixed list of
-    events: the app being opened, a workout being started or completed, a set being logged, and four
-    failure events — a failed save, a failed sync, settings falling back to defaults, and a screen
-    failing to open. Each event carries only counts, durations, the weekday of the plan, and the
-    workout category.
+    A report can contain error type, code stack frames, whether the error was handled, app version
+    and build, operating-system version, device model and architecture, and fixed diagnostic tags
+    such as the affected screen or storage operation.
   </li>
 </ul>
 <p>
-  Neither service is told who you are. We never send your account identifier, email address, or
-  display name to either of them, so the activity recorded is not linked to your account. The set of
-  fields an event is allowed to contain is fixed in the app's source code and anything outside it is
-  dropped before it is sent. Nothing you type &mdash; exercise names you add, notes, goals &mdash; and
-  no Apple Health reading is ever included. There is no advertising identifier, no cross-app tracking,
-  and no session or screen recording.
+  Before a Sentry error event is sent, Ascend rebuilds it from an allowlist. Error messages,
+  breadcrumbs, console output, request URLs and bodies, headers, cookies, account or user context,
+  screenshots, view hierarchies, local variables, attachments, and arbitrary extra fields are
+  removed. Workout content, sets, reps, weights, exercise names, notes, goals, profile values, and
+  Apple Health readings are not allowed into the transmitted event.
+</p>
+<p>
+  Ascend does not currently send product-analytics events to PostHog or another product-analytics
+  service. There is no advertising identifier, cross-app tracking, session replay, or screen
+  recording. We will update this policy before enabling any additional analytics collection.
 </p>
 
 <h2>What we do not do</h2>
@@ -201,28 +178,23 @@
   <li>We do not share your data with advertisers, and there is no advertising in the app.</li>
   <li>We do not use advertising or attribution SDKs, and the diagnostics described above are not used for advertising.</li>
   <li>We do not build advertising profiles or track you across other apps and websites.</li>
-  <li>We do not log authentication tokens or health information.</li>
+  <li>We do not send authentication tokens, workout content, or Apple Health readings to diagnostics.</li>
 </ul>
 
 <h2>Who processes your data</h2>
 <p>
-  Account and sync data is stored with <strong>Supabase</strong>, which provides our database and
-  authentication hosting. Data is transmitted over encrypted connections (HTTPS/TLS) and access is
-  restricted so that each account can only read and write its own rows. Your sign-in session is kept
-  in the secure storage provided by your operating system (iOS Keychain / Android Keystore).
-</p>
-<p>
-  Anonymous diagnostics are processed by <strong>Sentry</strong> (crash reports) and
-  <strong>PostHog</strong> (app activity), only while the switch described above is on.
+  <strong>Sentry</strong> processes the limited crash diagnostics described above only while the
+  sharing switch is on. We require service providers that handle this data to protect it consistently
+  with this policy and applicable law. Ascend does not currently send account, workout, product
+  analytics, or Apple Health data to Supabase, PostHog, or another cloud provider.
 </p>
 
 <h2 id="choices">Your choices and rights</h2>
 <ul>
-  <li><strong>Use the app without an account.</strong> Nothing is uploaded except the anonymous diagnostics described above, which you can turn off.</li>
-  <li><strong>Turn off anonymous usage data.</strong> More &rarr; Privacy &rarr; Share anonymous usage data. Crash reports and app-activity events both stop.</li>
-  <li><strong>Sign out.</strong> The account's cached data on that device is cleared or partitioned so another person using the device cannot read it.</li>
-  <li><strong>Delete your account.</strong> Available in the app under More &rarr; profile &rarr; Delete account and data, and also by email. See the <a href="delete-account.html">account deletion page</a>.</li>
-  <li><strong>Access or correct your data.</strong> Email us and we will help.</li>
+  <li><strong>Turn off crash diagnostics.</strong> Go to More &rarr; Privacy &rarr; Share anonymous usage data. New Sentry reports stop.</li>
+  <li><strong>Revoke Apple Health access.</strong> Use the iPhone Health app or iOS Settings, or turn health metrics off inside Ascend.</li>
+  <li><strong>Delete local data.</strong> Remove Ascend from your device. Data in an operating-system device backup remains subject to that provider's backup controls.</li>
+  <li><strong>Ask about diagnostic data.</strong> Contact us using the details below. Diagnostic reports are not tied to an Ascend account, so we may be unable to identify a particular report as yours.</li>
 </ul>
 <p>
   Depending on where you live, you may have additional rights over your personal data, such as
@@ -231,24 +203,25 @@
 
 <h2 id="security">Security</h2>
 <p>
-  Data in transit is encrypted (HTTPS/TLS). Account data is access-controlled so each account can
-  only read and write its own rows, and your sign-in session is kept in your operating system's
-  secure storage (iOS Keychain / Android Keystore) rather than in plain text. No method of storage
-  or transmission is 100% secure, so we cannot guarantee absolute security, but we do not store
-  passwords ourselves &mdash; authentication is handled by Supabase, Google, or Apple.
+  Workout and Apple Health data is processed on your devices. Crash diagnostics are transmitted to
+  Sentry over encrypted connections (HTTPS/TLS), after Ascend's allowlist removes the fields
+  described above. No storage or transmission method is 100% secure, so absolute security cannot be
+  guaranteed.
 </p>
 
 <h2>Data retention</h2>
 <p>
-  Account data is kept until you delete your account. Deletion removes your records from the live
-  database immediately. Encrypted infrastructure backups may hold residual copies for up to 30 days
-  before being overwritten.
+  Local workout and preference data remains until you delete it in Ascend, reset the app, or remove
+  the app, subject to your operating system's backup behavior. Sentry crash diagnostics are retained
+  only for the retention period configured for our Sentry project and are then deleted. You may
+  contact us to request earlier deletion, although reports that contain no account identifier may
+  not be identifiable as yours.
 </p>
 
 <h2 id="children">Children</h2>
 <p>
   Ascend is not directed at children under 13, and we do not knowingly collect their personal
-  data. If you believe a child has created an account, contact us and we will delete it.
+  data. If you believe a child's information reached our crash diagnostics, contact us.
 </p>
 
 <h2>Changes to this policy</h2>
@@ -259,7 +232,8 @@
 
 <h2>Contact</h2>
 <p>
-  Questions or requests: <strong>ksil.apps@gmail.com</strong>
+  Questions or requests: <a href="mailto:ksil.apps@gmail.com"><strong>ksil.apps@gmail.com</strong></a>.
+  You can also visit our <a href="support.html">support page</a>.
 </p>
 
 </div>
