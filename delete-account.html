@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How to permanently delete your Ascend account and associated data.">
+<meta name="description" content="How to request deletion of an earlier Ascend account and erase local V2 workout data.">
 <meta name="theme-color" content="#12151c">
 <link rel="icon" type="image/png" href="ascend-favicon.png">
-<title>Delete your Ascend account</title>
+<title>Ascend Account and Data Deletion</title>
 <style>
   :root { color-scheme: dark; --amber:#f5a623; --amber-light:#ffd37c; --canvas:#12151c; --surface:#1a1e27; --raised:#222733; --text:#f5f6f8; --muted:#a8afbd; --line:rgba(255,255,255,.1); --max:71rem; }
   * { box-sizing:border-box; }
@@ -77,70 +77,55 @@
 <main class="shell" id="main-content">
 <section class="hero" aria-labelledby="page-title">
   <p class="eyebrow">Account &amp; data</p>
-  <h1 id="page-title">Delete your Ascend account</h1>
+  <h1 id="page-title">Account and data deletion</h1>
   <p class="lede">Ascend (<code>com.ksil.ascend</code>)</p>
 </section>
 <article class="document">
-<nav class="document-nav" aria-label="On this page"><p>On this page</p><ul><li><a href="#in-app">Delete in app</a></li><li><a href="#request">Email request</a></li><li><a href="#deleted">What is deleted</a></li><li><a href="#device">Device data</a></li><li><a href="#retention">Retention</a></li></ul></nav>
+<nav class="document-nav" aria-label="On this page"><p>On this page</p><ul><li><a href="#availability">Earlier accounts</a></li><li><a href="#request">Request deletion</a></li><li><a href="#device">Device data</a></li></ul></nav>
 <div class="document-body">
 
+<h2 id="availability">Accounts made in earlier builds</h2>
 <p>
-  You can permanently delete your Ascend account and its data at any time. Deletion is
-  immediate and cannot be undone.
+  Ascend V2 does not offer account creation or sign-in. If you created an Ascend account in an
+  earlier development or test build, use the support request below to ask us to delete the
+  Supabase account and associated profile. We will verify that you control the account before
+  processing the request. Deleting that account does not erase workout plans, sessions, history,
+  or settings stored on your device. If an earlier test build enabled cloud backup, mention that
+  in your request so we can review any separate cloud workout records.
+</p>
+<p>
+  Earlier app builds may have offered in-app deletion, but the V2 app cannot access that control.
+  A minimal deletion-request record with the former account ID, provider, status, and timestamps
+  may remain for retry and audit purposes. Account deletion does not automatically remove Apple
+  or RevenueCat purchase and transaction records.
 </p>
 
-<h2 id="in-app">Delete from inside the app</h2>
-<ol>
-  <li>Open Ascend and go to <strong>More &rarr; the profile button</strong>.</li>
-  <li>Make sure you are signed in to the account you want to remove.</li>
-  <li>Tap <strong>Delete account and data</strong>.</li>
-  <li>Confirm when asked. The account and its stored data are deleted right away.</li>
-</ol>
-
-<h2 id="request">Request deletion without the app</h2>
+<h2 id="request">Request account deletion</h2>
 <div class="card">
   <p>
-    If you can no longer sign in or have uninstalled the app, email
-    <strong>ksil.apps@gmail.com</strong> from the address on the account with the subject
-    <strong>&ldquo;Delete my Ascend account&rdquo;</strong>.
+    Email <a href="mailto:ksil.apps@gmail.com?subject=Delete%20my%20Ascend%20account%20data">ksil.apps@gmail.com</a> with the subject
+    <strong>&ldquo;Delete my Ascend account data&rdquo;</strong>.
   </p>
   <p style="margin-bottom:0">
-    Requests are actioned within 30 days. We may need to confirm you control the email address
-    before deleting, so that nobody else can delete your account.
+    Include the email address used for the account, if known. Do not send your password or sign-in tokens.
+    We may need to verify that you control the account before acting on the request.
   </p>
 </div>
 
-<h2 id="deleted">What is deleted</h2>
-<ul>
-  <li>Your account and sign-in credentials.</li>
-  <li>Your profile, including any display name and email address stored with it.</li>
-  <li>Your synced workout plans, workout sessions, completed sets, exercise history, and app settings.</li>
-</ul>
-
-<h2 id="device">What happens on your device</h2>
+<h2 id="device">Erase data on your device</h2>
 <p>
-  Deleting from inside the app also removes the copy of that account's data stored on that device.
-  If you used Ascend on more than one device, open the app on each one and sign out, or
-  uninstall it, to clear the local copy there as well.
-</p>
-<p>
-  Workouts you recorded as a guest, before ever signing in, are stored only on your device. They
-  are not part of your account and are removed by uninstalling the app.
-</p>
-
-<h2 id="retention">Retention</h2>
-<p>
-  Deleted account records are removed from the live database immediately. Encrypted infrastructure
-  backups may retain residual copies for up to 30 days, after which they are overwritten. We do not
-  restore deleted accounts from those backups.
+  Use <strong>More &rarr; Profile &rarr; Danger zone &rarr; Erase workouts on this device</strong> for a
+  separate confirmed local erase. Removing Ascend also removes its local app data, subject to
+  operating-system backup behavior. Apple and RevenueCat purchase records are handled separately;
+  see the <a href="privacy-policy.html">privacy policy</a>.
 </p>
 
 </div>
 </article>
 </main>
 <footer><div class="shell">
-  <div class="footer-content"><a class="footer-brand" href="index.html">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Subscription Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
-  <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved. &middot; Last updated 1 September 2026</p>
+  <div class="footer-content"><a class="footer-brand" href="index.html">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Purchase Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
+  <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved. &middot; Last updated 6 October 2026</p>
 </div></footer>
 
 </body>
