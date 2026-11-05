@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Learn how Ascend handles local workouts, optional tips, Apple Health, crash diagnostics, and earlier account deletion requests.">
+<meta name="description" content="Learn how Ascend handles local workouts, optional Pro cloud sync, subscriptions and tips, Apple Health, crash diagnostics, and earlier account deletion requests.">
 <meta name="theme-color" content="#12151c">
 <link rel="icon" type="image/png" href="ascend-favicon.png">
 <title>Ascend Privacy Policy</title>
@@ -80,19 +80,20 @@
 <section class="hero" aria-labelledby="page-title">
   <p class="eyebrow">Privacy &amp; data</p>
   <h1 id="page-title">Privacy Policy</h1>
-  <p class="lede">Ascend (<code>com.ksil.ascend</code>) &middot; Last updated 6 October 2026</p>
+  <p class="lede">Ascend (<code>com.ksil.ascend</code>) &middot; Last updated 5 November 2026</p>
 </section>
 
 <article class="document">
 <nav class="document-nav" aria-label="On this page">
   <p>On this page</p>
-  <ul><li><a href="#accounts">Earlier accounts</a></li><li><a href="#local-data">Local data</a></li><li><a href="#tips">Optional tips</a></li><li><a href="#health-data">Health data</a></li><li><a href="#diagnostics">Diagnostics</a></li><li><a href="#choices">Your choices</a></li><li><a href="#security">Security</a></li><li><a href="#children">Children</a></li></ul>
+  <ul><li><a href="#accounts">Earlier accounts</a></li><li><a href="#local-data">Local data</a></li><li><a href="#tips">Subscriptions and tips</a></li><li><a href="#cloud">Cloud sync</a></li><li><a href="#health-data">Health data</a></li><li><a href="#diagnostics">Diagnostics</a></li><li><a href="#choices">Your choices</a></li><li><a href="#security">Security</a></li><li><a href="#children">Children</a></li></ul>
 </nav>
 <div class="document-body">
 
 <p>
-  Ascend V2 stores workouts on your device. Account creation, sign-in, and workout cloud backup are unavailable in this release.
-  This policy explains what stays on your device, data from accounts made in earlier builds, optional tips processed by Apple and RevenueCat,
+  Ascend stores workouts on your device. Pro cloud backup and sync are available in supported builds,
+  depending on platform, cloud account, and service configuration.
+  This policy explains local and cloud data, accounts made in earlier builds, subscriptions and optional tips processed by your store and RevenueCat,
   the Apple Health data Ascend can read with your permission, and limited
   crash diagnostics. For rules on using the
   app itself, including exercise and injury disclaimers, see the
@@ -101,19 +102,27 @@
 
 <h2 id="accounts">Accounts made in earlier builds</h2>
 <p>
-  V2 has no account creation or sign-in. If you made an account in an earlier development or test build,
+  Local workouts do not require account creation or sign-in. If you made an account in an earlier development or test build,
   Supabase may still hold your account user ID, email address and profile display name when provided,
-  and account records needed to process deletion. Disabling sign-in does not delete those records.
+  and account records needed to process deletion. Using a build without sign-in does not delete those records.
   Account sign-in alone did not upload or restore workouts, plans, or settings. Data created in
   earlier builds that enabled cloud backup may still exist separately; contact support about it.
 </p>
 <p>
-  V2 cannot delete an earlier account in the app because sign-in is unavailable. Follow the
+  If your build does not offer sign-in or in-app account deletion, follow the
   <a href="delete-account.html">account deletion instructions</a> to request deletion through support.
   Deleting an account does not erase workout data stored on your device.
 </p>
 
-<h2 id="tips">Optional tips and purchases</h2>
+<h2 id="tips">Subscriptions, optional tips, and purchases</h2>
+<p>
+  Ascend Pro is an optional monthly or annual subscription. Apple or Google processes payment for
+  purchases made through its store. RevenueCat validates purchases and manages subscription access.
+  Purchase data can include product and transaction identifiers, purchase and expiry dates, renewal
+  and entitlement status, store, currency, and app/device information needed to operate the service.
+  Ascend may store entitlement status locally so it can determine which Pro features are available.
+  See the <a href="subscription-terms.html">subscription and purchase terms</a>.
+</p>
 <p>
   You may send a repeatable, one-time tip through Apple's in-app purchase system. Tips are optional,
   require no Ascend account, and unlock no feature or entitlement. Apple determines and displays the
@@ -121,19 +130,19 @@
 </p>
 <p>
   RevenueCat handles purchase validation and transaction history for Ascend. Its purchase processing
-  can include the tip product identifier, transaction identifier, purchase date, storefront and
+  can include the purchased product identifier, transaction identifier, purchase date, storefront and
   currency information, and app/device information needed to operate its SDK. RevenueCat assigns
   an anonymous customer identifier in V2. Earlier signed-in tip records may include an account ID.
   A local tip record can also hold product and transaction identifiers. Account deletion does not
-  itself remove Apple's or RevenueCat's transaction records.
+  itself cancel a subscription or remove Apple, Google, or RevenueCat transaction records.
 </p>
 
 <h2 id="local-data">Data stored on your device</h2>
 <div class="card">
   <p style="margin:0">
     Your workout plans, workout sessions, completed sets, weights, reps, exercise history, goals,
-    settings, and workout profile preferences are stored locally. This release has no workout
-    cloud backup and does not upload full workout records. If PostHog is configured and sharing
+    settings, and workout profile preferences are stored locally. Supported Pro cloud sync can
+    also upload the workout records described below. If PostHog is configured and sharing
     is enabled, limited workout activity events and counts can leave the device as described below.
     Earlier account profile data, purchase records, and diagnostics are separate categories of data.
   </p>
@@ -143,6 +152,29 @@
   If you use the companion Apple Watch app, current workout state can pass directly between your
   paired iPhone and Apple Watch through Apple's device-connectivity service. We do not receive it.
   Deleting Ascend removes its locally stored app data, subject to operating-system backup behavior.
+</p>
+
+<h2 id="cloud">Optional Pro cloud backup and sync</h2>
+<p>
+  In supported iOS builds, Ascend Pro uses Apple CloudKit with your iCloud account to back up,
+  restore, and sync workout plans and logged workout records, including exercises, sets, reps,
+  weights, completion data, and supported workout preferences. Ascend uses a cloud account identifier to keep records associated
+  with the correct account. iCloud availability and storage limits depend on your Apple account.
+  Pro iCloud setup can start automatically when an eligible build has an available iCloud account;
+  Ascend respects saved pause and deletion choices. You can manage sync in Ascend settings.
+</p>
+<p>
+  Other supported builds may use Supabase for account authentication and workout sync when those
+  services are enabled and configured. Account records can include your user ID, email address,
+  and display name. These builds require the relevant sign-in and sync setup. Providers and backups
+  are not interchangeable: an iCloud backup is not an Android backup.
+</p>
+<p>
+  Apple Health readings are excluded from workout cloud sync. Turning off sync or allowing Pro to
+  expire does not itself delete an existing cloud backup. Use the separate cloud-erasure control
+  to remove it; an active Pro subscription is not required to erase an existing configured backup.
+  Erasing cloud data keeps local workouts. Erasing local data or uninstalling the app does not
+  itself remove cloud records. See <a href="delete-account.html#cloud">cloud-data deletion</a>.
 </p>
 
 <h2 id="health-data">Health and fitness data</h2>
@@ -218,14 +250,16 @@
   <li>We do not use advertising or attribution SDKs, and the diagnostics described above are not used for advertising.</li>
   <li>We do not build advertising profiles or track you across other apps and websites.</li>
   <li>We do not send full workout records or Apple Health readings to Sentry or PostHog. If PostHog is enabled, limited workout activity events and counts may be sent as described above.</li>
-  <li>Account creation, sign-in, and workout cloud backup are unavailable in V2.</li>
+  <li>Local workouts require no Ascend account. Optional cloud services depend on the supported build and settings described above.</li>
   <li>We do not make tips unlock Premium or any other app feature.</li>
 </ul>
 
 <h2>Who processes your data</h2>
 <p>
-  <strong>Apple</strong> processes optional in-app
-  payments. <strong>Supabase</strong> may retain accounts created in earlier builds; V2 does not create or sign in to accounts.
+  <strong>Apple</strong> and <strong>Google</strong> process payments made through their stores.
+  <strong>Apple CloudKit</strong> processes supported iCloud workout sync. <strong>Supabase</strong>
+  processes authentication and cloud workout records in supported builds where those services are
+  enabled, and may retain accounts created in earlier builds.
   <strong>RevenueCat</strong> validates and records purchase transactions and uses an anonymous customer ID in V2. Earlier signed-in purchases may remain associated with an account.
   <strong>Sentry</strong> processes limited crash diagnostics while the sharing switch is on and
   a Sentry destination is configured. <strong>PostHog</strong> can process the limited anonymous
@@ -236,12 +270,14 @@
 
 <h2 id="choices">Your choices and rights</h2>
 <ul>
-  <li><strong>Delete an earlier account.</strong> Follow the <a href="delete-account.html">support request instructions</a>. V2 has no in-app account deletion control. Deletion does not erase local workouts or Apple and RevenueCat transaction records.</li>
+  <li><strong>Delete an earlier account.</strong> Follow the <a href="delete-account.html">support request instructions</a>. Use support if your build has no in-app account deletion control. Deletion does not erase local workouts or Apple, Google, and RevenueCat transaction records.</li>
   <li><strong>Turn off sharing.</strong> Go to More &rarr; Privacy &rarr; Share anonymous usage data. New Sentry reports and, if PostHog is configured, new product-analytics events stop.</li>
   <li><strong>Revoke Apple Health access.</strong> Use the iPhone Health app or iOS Settings, or turn health metrics off inside Ascend.</li>
   <li><strong>Erase local workouts.</strong> More &rarr; Profile &rarr; Danger zone &rarr; Erase workouts on this device permanently removes local workouts and settings.</li>
+  <li><strong>Manage cloud data.</strong> Use Ascend settings to manage sync or erase an existing configured cloud backup. Cloud erasure and local erasure are separate.</li>
+  <li><strong>Manage subscriptions.</strong> Cancel renewal through your store account. Account deletion or data erasure does not cancel billing. See the <a href="subscription-terms.html">subscription terms</a>.</li>
   <li><strong>Skip optional tips.</strong> Tips are never required. Consumed tips do not provide ongoing access to restore. Refund requests are handled under Apple's purchase rules.</li>
-  <li><strong>Ask about purchase records.</strong> Contact us for support. Apple and RevenueCat retain transaction records under their own legal and operational requirements.</li>
+  <li><strong>Ask about purchase records.</strong> Contact us for support. Apple, Google, and RevenueCat retain transaction records under their own legal and operational requirements.</li>
   <li><strong>Ask about diagnostic data.</strong> Contact us using the details below. Diagnostic reports are not tied to an Ascend account, so we may be unable to identify a particular report as yours.</li>
 </ul>
 <p>
@@ -251,9 +287,9 @@
 
 <h2 id="security">Security</h2>
 <p>
-  Workout data is processed locally. Apple Health readings remain on your devices.
-  Optional purchases use Apple's payment
-  sheet and RevenueCat's encrypted receipt-validation connection; Ascend does not handle payment-card
+  Workout data is processed locally and, when configured, by the supported cloud provider. Apple Health readings remain on your devices.
+  Optional purchases use your store's payment
+  flow and RevenueCat's encrypted receipt-validation connection; Ascend does not handle payment-card
   details. Crash diagnostics use encrypted connections
   after Ascend's allowlist removes sensitive fields. No method is 100% secure.
 </p>
@@ -265,7 +301,9 @@
   until deletion is completed. A minimal Supabase deletion-request record, including
   the former account ID, request ID, provider, status, and timestamps, can remain after account
   deletion for retry and audit purposes. Sentry reports and, if enabled, PostHog events follow
-  their configured retention periods. Apple and RevenueCat retain purchase records under their legal,
+  their configured retention periods. Cloud workout records remain until erased through the applicable
+  cloud-data deletion process, subject to provider retention and backup requirements. Cancelling Pro
+  or uninstalling the app does not itself erase them. Apple, Google, and RevenueCat retain purchase records under their legal,
   fraud-prevention, refund, accounting, and operational requirements. Contact us for current operational retention details or an
   earlier deletion request, although anonymous diagnostic reports may not be identifiable as yours.
 </p>
@@ -293,7 +331,7 @@
 </main>
 
 <footer><div class="shell">
-  <div class="footer-content"><a class="footer-brand" href="index.html">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Purchase Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
+  <div class="footer-content"><a class="footer-brand" href="index.html">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Subscription &amp; Purchase Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
   <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved.</p>
 </div></footer>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How to request deletion of an earlier Ascend account and erase local V2 workout data.">
+<meta name="description" content="How to delete Ascend account, local and cloud workout data, and cancel subscriptions separately.">
 <meta name="theme-color" content="#12151c">
 <link rel="icon" type="image/png" href="ascend-favicon.png">
 <title>Ascend Account and Data Deletion</title>
@@ -81,22 +81,22 @@
   <p class="lede">Ascend (<code>com.ksil.ascend</code>)</p>
 </section>
 <article class="document">
-<nav class="document-nav" aria-label="On this page"><p>On this page</p><ul><li><a href="#availability">Earlier accounts</a></li><li><a href="#request">Request deletion</a></li><li><a href="#device">Device data</a></li></ul></nav>
+<nav class="document-nav" aria-label="On this page"><p>On this page</p><ul><li><a href="#availability">Earlier accounts</a></li><li><a href="#request">Request deletion</a></li><li><a href="#device">Device data</a></li><li><a href="#cloud">Cloud data</a></li><li><a href="#subscriptions">Subscriptions</a></li></ul></nav>
 <div class="document-body">
 
 <h2 id="availability">Accounts made in earlier builds</h2>
 <p>
-  Ascend V2 does not offer account creation or sign-in. If you created an Ascend account in an
-  earlier development or test build, use the support request below to ask us to delete the
+  Local workouts do not require an Ascend account. If you created an Ascend account in a
+  build that offered sign-in, use the support request below to ask us to delete the
   Supabase account and associated profile. We will verify that you control the account before
   processing the request. Deleting that account does not erase workout plans, sessions, history,
   or settings stored on your device. If an earlier test build enabled cloud backup, mention that
   in your request so we can review any separate cloud workout records.
 </p>
 <p>
-  Earlier app builds may have offered in-app deletion, but the V2 app cannot access that control.
+  If your build offers in-app account deletion, you may use it; otherwise contact support below.
   A minimal deletion-request record with the former account ID, provider, status, and timestamps
-  may remain for retry and audit purposes. Account deletion does not automatically remove Apple
+  may remain for retry and audit purposes. Account deletion does not automatically remove Apple, Google,
   or RevenueCat purchase and transaction records.
 </p>
 
@@ -116,16 +116,33 @@
 <p>
   Use <strong>More &rarr; Profile &rarr; Danger zone &rarr; Erase workouts on this device</strong> for a
   separate confirmed local erase. Removing Ascend also removes its local app data, subject to
-  operating-system backup behavior. Apple and RevenueCat purchase records are handled separately;
+  operating-system backup behavior. Apple, Google, and RevenueCat purchase records are handled separately;
   see the <a href="privacy-policy.html">privacy policy</a>.
 </p>
 
+<h2 id="cloud">Erase cloud workout data</h2>
+<p>
+  In supported builds, use the separate <strong>Erase Ascend iCloud data</strong> or
+  <strong>Erase cloud backup</strong> control in Ascend settings. This removes the associated
+  cloud workout backup and stops sync, while keeping workouts on this device. An active Pro
+  subscription is not required to erase an existing configured backup. Local erasure or uninstalling
+  the app does not by itself erase cloud data. Contact support if you cannot access the relevant account.
+</p>
+<h2 id="subscriptions">Cancel subscriptions separately</h2>
+<p>
+  Account deletion, cloud or local data erasure, and uninstalling Ascend do not cancel Ascend Pro
+  or stop renewal charges. Cancel with the store that bills you:
+  <a href="https://apps.apple.com/account/subscriptions">App Store subscriptions</a> or
+  <a href="https://play.google.com/store/account/subscriptions">Google Play subscriptions</a>.
+  Store and RevenueCat transaction records are handled separately under their retention requirements.
+  See the <a href="subscription-terms.html">subscription and purchase terms</a>.
+</p>
 </div>
 </article>
 </main>
 <footer><div class="shell">
-  <div class="footer-content"><a class="footer-brand" href="index.html">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Purchase Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
-  <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved. &middot; Last updated 6 October 2026</p>
+  <div class="footer-content"><a class="footer-brand" href="index.html">Ascend</a><nav class="footer-links" aria-label="Footer navigation"><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="subscription-terms.html">Subscription &amp; Purchase Terms</a><a href="delete-account.html">Delete Account</a></nav></div>
+  <p class="copyright">&copy; 2026 KSIL Apps. All rights reserved. &middot; Last updated 5 November 2026</p>
 </div></footer>
 
 </body>
